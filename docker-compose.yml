@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  nextapp:
+    container_name: nextapp
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    image: fran/nextjs:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - './app:/app'
