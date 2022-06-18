@@ -5,7 +5,7 @@ services:
     build:
       context: '.'
       dockerfile: 'Dockerfile'
-    image: fran/nextjs:latest
+    image: fran2/nextjs:latest
     ports:
       - 3000:3000
     volumes:

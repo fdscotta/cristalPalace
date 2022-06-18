@@ -1,13 +1,6 @@
 import Avatar from "components/Avatar"
 import { useRouter } from "next/router"
-import {
-  Stack,
-  useColorModeValue,
-  Flex,
-  Box,
-  Center,
-  Spacer,
-} from "@chakra-ui/react"
+import { Stack, useColorModeValue, Flex, Box, Center } from "@chakra-ui/react"
 import { DeleteIcon } from "@chakra-ui/icons"
 import { deletePlayer } from "firebase/client"
 
@@ -51,12 +44,11 @@ export default function Player({
         boxShadow={"2xl"}
         padding={4}
       >
-        <Flex onClick={handleArticleClick}>
-          <Center p="4">
+        <Flex>
+          <Center width="25%" p="4" onClick={handleArticleClick}>
             <Avatar alt={playername} src={avatar} />
           </Center>
-          <Spacer />
-          <Box>
+          <Box width="60%" onClick={handleArticleClick}>
             <header>
               <strong>{playername}</strong>
               <span> · </span>
@@ -68,8 +60,7 @@ export default function Player({
               categoryFrom > category &&
               daysFromCreation(lastUpdate) < 30 && <p>Asendido!!</p>}
           </Box>
-          <Spacer />
-          <Center p="4">
+          <Center width="15%" p="4">
             <a onClick={handleDeleteClick}>
               <DeleteIcon key={"di-" + id} stroke="#09f" />
             </a>

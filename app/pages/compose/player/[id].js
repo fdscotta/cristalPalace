@@ -10,6 +10,7 @@ import {
   Wrap,
   Alert,
   AlertIcon,
+  Box,
 } from "@chakra-ui/react"
 import Home from "components/Icons/Home"
 import Link from "next/link"
@@ -269,13 +270,13 @@ export default function ComposePlayer() {
           </form>
         </Container>
         <Wrap spacing="30px" justify="center">
-          <nav>
+          <Box p="6">
             <Link href="/home">
               <a>
                 <Home width={32} height={32} stroke="#09f" />
               </a>
             </Link>
-          </nav>
+          </Box>
         </Wrap>
       </VStack>
     </>

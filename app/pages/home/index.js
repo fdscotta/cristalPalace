@@ -10,9 +10,10 @@ import {
   VStack,
   Heading,
   Container,
-  Center,
+  Box,
   Flex,
   Spacer,
+  Wrap,
 } from "@chakra-ui/react"
 
 export default function HomePage() {
@@ -63,29 +64,31 @@ export default function HomePage() {
               )
             )
           ) : (
-            <strong>No hay jugadores cargados</strong>
+            <Wrap spacing="30px" justify="center">
+              <Box>
+                <strong>No hay jugadores cargados</strong>
+              </Box>
+            </Wrap>
           )}
         </Container>
         {user && (
           <Container>
             <Flex>
-              <nav>
-                <Center>
-                  <Link href="/home">
-                    <a>
-                      <Home width={32} height={32} stroke="#09f" />
-                    </a>
-                  </Link>
-                </Center>
-                <Spacer />
-                <Center>
-                  <Link href="/compose/player/new">
-                    <a>
-                      <Create width={32} height={32} stroke="#09f" />
-                    </a>
-                  </Link>
-                </Center>
-              </nav>
+              <Box p="6" marginLeft="20px">
+                <Link href="/home">
+                  <a>
+                    <Home width={32} height={32} stroke="#09f" />
+                  </a>
+                </Link>
+              </Box>
+              <Spacer />
+              <Box p="6" marginRight="20px">
+                <Link href="/compose/player/new">
+                  <a>
+                    <Create width={32} height={32} stroke="#09f" />
+                  </a>
+                </Link>
+              </Box>
             </Flex>
           </Container>
         )}
